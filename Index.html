@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Museum of Us ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#100e12;color:#f9eee6;font-family:Georgia,serif;text-align:center}
+header{padding:45px 18px 30px;background:linear-gradient(#35202b,#100e12)}
+.eyebrow{color:#e9b985;letter-spacing:4px;font-size:11px}
+h1{font-size:clamp(40px,11vw,68px);font-weight:normal;margin:18px 0}
+p{line-height:1.8;color:#d8c9c5}
+button{cursor:pointer;font:inherit}
+.open{background:#e8c09a;color:#24141b;border:0;border-radius:30px;padding:15px 25px;margin:20px 0}
+main{max-width:720px;margin:auto;padding:22px}
+.intro{font-size:17px}
+.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:28px 0}
+.room{min-height:165px;background:#201b22;border:1px solid #65505a;border-radius:8px;padding:22px 10px;color:#fff0df}
+.room span{display:block;font-size:35px;margin-bottom:13px}
+.room small{display:block;color:#d6b69d;margin-top:10px}
+.room:active{transform:scale(.98)}
+.panel{display:none;background:#211920;border:1px solid #9a7969;border-radius:12px;padding:24px;margin:22px 0}
+.panel h2{font-size:27px;font-weight:normal;color:#f0cba8}
+.close{background:transparent;border:1px solid #b99a89;color:#f9eee6;padding:10px 18px;border-radius:20px}
+.note{background:#30232c;padding:17px;border-radius:8px;margin:12px 0}
+footer{padding:35px 15px;color:#c4a48f;font-size:12px;letter-spacing:2px}
+.bigheart{font-size:48px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">A LITTLE PLACE IN THE UNIVERSE</div>
+  <h1>Museum of Us</h1>
+  <p>A collection of moments, memories<br>and a love story still being written.</p>
+  <button class="open" onclick="document.getElementById('museum').scrollIntoView({behavior:'smooth'})">Enter our museum ♡</button>
+</header>
+
+<main id="museum">
+  <div class="intro">
+    <div class="eyebrow">PRIVATE COLLECTION · EXHIBIT NO. 01</div>
+    <p>Dear honeyyy, welcome to our little museum. Every room holds a little piece of our story. Take your time exploring. This place was made especially for you. ❤️</p>
+  </div>
+
+  <div class="rooms">
+    <button class="room" onclick="show('beginning')"><span>🕯️</span>The Beginning<small>Where our story began</small></button>
+    <button class="room" onclick="show('gallery')"><span>🖼️</span>The Gallery<small>Our favourite memories</small></button>
+    <button class="room" onclick="show('chaos')"><span>🎞️</span>The Chaos Room<small>Our silly little world</small></button>
+    <button class="room" onclick="show('letters')"><span>💌</span>The Love Letters<small>Words just for you</small></button>
+    <button class="room" onclick="show('future')"><span>🌙</span>The Dream Room<small>Things still to come</small></button>
+    <button class="room" onclick="show('birthday')"><span>🎂</span>The Final Exhibit<small>A birthday surprise</small></button>
+  </div>
+
+  <section class="panel" id="beginning">
+    <h2>Once upon a time…</h2>
+    <p>Somehow, among all the people in this world, our paths crossed. And that became the beginning of a story worth keeping.</p>
+    <div class="note">📌 Our story began: <strong>[Add your special date or memory]</strong></div>
+    <p>My favourite part? We still have so much story left to write.</p>
+    <button class="close" onclick="hideAll()">Back to the museum</button>
+  </section>
+
+  <section class="panel" id="gallery">
+    <h2>Little moments, big memories</h2>
+    <p>Every picture has a story. Add your favourite photos to this room when you personalise the website.</p>
+    <div class="note">📷 Exhibit A: [Your favourite picture together]</div>
+    <div class="note">📷 Exhibit B: [A screenshot of a special conversation]</div>
+    <div class="note">📷 Exhibit C: [A moment that always makes you smile]</div>
+    <button class="close" onclick="hideAll()">Back to the museum</button>
+  </section>
+
+  <section class="panel" id="chaos">
+    <h2>Certified troublemakers 😂</h2>
+    <p>Every great love story needs a little nonsense.</p>
+    <div class="note">🏆 World's most annoying honeyyy</div>
+    <div class="note">🏆 Best at making me laugh at the wrong time</div>
+    <div class="note">🏆 Most likely to start a silly argument</div>
+    <p>And somehow, all this chaos makes our story ours.</p>
+    <button class="close" onclick="hideAll()">Back to the museum</button>
+  </section>
+
+  <section class="panel" id="letters">
+    <h2>A letter for you 💌</h2>
+    <p>There are a million things I could say, but today I want you to remember this: you deserve happiness, beautiful opportunities, peace of mind, and so many reasons to smile.</p>
+    <p>Thank you for being a part of my story. I hope this new chapter of your life brings you closer to all the things you dream about.</p>
+    <p>With love, your girl ❤️</p>
+    <button class="close" onclick="hideAll()">Back to the museum</button>
+  </section>
+
+  <section class="panel" id="future">
+    <h2>To be continued… 🌙</h2>
+    <p>This museum holds memories from our past, but the future has blank pages waiting for us.</p>
+    <div class="note">🌍 A place we want to visit: [Add a dream destination]</div>
+    <div class="note">🍰 Something we want to do together: [Add your dream date]</div>
+    <div class="note">✨ A new memory we haven't made yet: [Your idea]</div>
+    <p>Some of the best exhibits haven't even happened yet.</p>
+    <button class="close" onclick="hideAll()">Back to the museum</button>
+  </section>
+
+  <section class="panel" id="birthday">
+    <div class="bigheart">❤️</div>
+    <div class="eyebrow">THE MOST IMPORTANT EXHIBIT</div>
+    <h2>Happy Birthday, honeyyy!</h2>
+    <p>If this museum could hold every memory, every laugh, every little moment and every wish I have for you, it would need a thousand more rooms.</p>
+    <p>Today, I hope you feel celebrated for the person you are and excited for the person you're becoming. May this year bring you happiness, growth, success and wonderful surprises.</p>
+    <p>Thank you for being part of my world. And now, go make this new chapter beautiful. 🥹❤️</p>
+    <div class="note">🎁 Your final exhibit: You are the birthday boy. Today is your day. Enjoy every bit of it!</div>
+    <p>Made with love, just for you. ♡</p>
+    <button class="close" onclick="hideAll()">Return to our museum</button>
+  </section>
+</main>
+
+<footer>MADE WITH LOVE · OUR STORY IS STILL BEING WRITTEN ♡</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.panel').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.getElementById(id).scrollIntoView({behavior:'smooth',block:'center'});
+}
+function hideAll(){
+  document.querySelectorAll('.panel').forEach(p=>p.style.display='none');
+  document.getElementById('museum').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
